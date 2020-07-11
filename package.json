@@ -7,7 +7,8 @@
   "scripts": {
     "start": "electron .",
     "rebuild": "npm rebuild --runtime=electron --target=9.1.0 --disturl=https://atom.io/download/atom-shell --abi=80",
-    "macos": "electron-packager . --icon=icon.icns"
+    "macos": "electron-packager . --icon=icon.icns",
+    "windows": "electron-packager . --icon=icon.ico --overwrite"
   },
   "devDependencies": {
     "electron": "^9.1.0",

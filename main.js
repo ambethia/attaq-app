@@ -66,10 +66,15 @@ function getKeyCode() {
   } catch (error) {}
 }
 
+let timerId;
 function pressGlobalKey() {
-  if (currentKeyCode) {
-    robot.keyTap(currentKeyCode);
-  }
+	if (timerId) return
+	timerId = setTimeout(()  => {
+    if (currentKeyCode) {
+      robot.keyTap(currentKeyCode);
+    }
+		timerId = undefined;
+	}, 500)
 }
 
 function setGeometry() {
