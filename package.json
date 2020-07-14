@@ -4,18 +4,33 @@
   "private": true,
   "version": "0.1.0",
   "main": "main.js",
+  "iohook": {
+    "targets": [
+      "electron-76",
+      "node-72"
+    ],
+    "platforms": [
+      "win32",
+      "darwin"
+    ],
+    "arches": [
+      "x64"
+    ]
+  },
   "scripts": {
     "start": "electron .",
-    "rebuild": "npm rebuild --runtime=electron --target=9.1.0 --disturl=https://atom.io/download/atom-shell --abi=80",
-    "macos": "electron-packager . --icon=icon.icns",
-    "windows": "electron-packager . --icon=icon.ico --overwrite"
+    "rebuild": "npm rebuild --runtime=electron --target=8.3.4 --disturl=https://atom.io/download/atom-shell --abi=76",
+    "macos": "electron-packager . --icon=icon.icns --overwrite",
+    "windows": "electron-packager . --icon=icon.ico --overwrite",
+    "postinstall": "npm run rebuild"
   },
   "devDependencies": {
-    "electron": "^9.1.0",
+    "electron": "^8.3.4",
     "electron-packager": "^15.0.0"
   },
   "dependencies": {
     "electron-window-state": "^5.0.3",
+    "iohook": "^0.6.6",
     "jsqr": "^1.3.1",
     "robotjs": "^0.6.0"
   }
