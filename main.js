@@ -88,3 +88,7 @@ function setGeometry() {
 }
 
 app.whenReady().then(setup);
+
+app.on("before-quit", () => {
+  ioHook.unload();
+});
